@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epic Matching Game</title>
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <link rel="stylesheet" href="styles.css">
+            <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        </head>
+   
+        <body>
+            <h1>Epic Matching Game</h1>
+            <table id="match">
+
+            </table>
+            <script>
+                
+                for (i=0;i<4;i++) {
+                    $("#match").append('<tr id=\"r' + i + '\"></tr>')
+                    for (j=0;j<4;j++) {
+                        $("#r" + i).append('<th id=\"r' + i + "c" + j + '\"></tr>')
+                        $("#r" + i + "c" + j).append("<img src=\"background.png\">")
+                    }
+                }
+            
+            </script>
+        </body>
+    </html>
+   

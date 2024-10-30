@@ -1,0 +1,16 @@
+body {
+    background-color: blanchedalmond;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+table, th, td {
+    border: 5px solid;
+    align-self: center;
+}
+th {
+    background-image: "background.png";
+}
+img {
+    height: 200px;
+}
+
