@@ -31,13 +31,16 @@
                         fruitList[i][j] = temp
                     }
                 }
+            function changeImage(r, c) {
                 
+            }
                 
                 for (i=0;i<4;i++) {
                     $("#match").append('<tr id=\"r' + i + '\"></tr>')
                     for (j=0;j<4;j++) {
                         $("#r" + i).append('<th id=\"r' + i + "c" + j + '\"></tr>')
-                        $("#r" + i + "c" + j).append("<img src=\"Images/background.png\">")
+                        $("#r" + i + "c" + j).append("<img id=Imgr" + r +"c" + c + " src=\"Images/background.png\">")
+                        $("#Imgr" + i + "c" + j).click()
                     }
                 }
             
