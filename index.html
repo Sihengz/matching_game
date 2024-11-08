@@ -25,15 +25,19 @@
                              ["Images/grapefruit.png", "Images/grapefruit.png", "Images/grape.png", "Images/grape.png",],
                              ["Images/olive.png", "Images/olive.png", "Images/orange.png", "Images/orange.png",],
                              ["Images/pomegranate.png", "Images/pomegranate.png", "Images/starfruit.png", "Images/starfruit.png",]]
-                for (i=0;i<4;i++) {
-                    for (j=0;j<4;j++) {
-                        row = Math.floor(Math.random() * 3);
-                        col = Math.floor(Math.random() * 3);
-                        temp = fruitList[row][col]
-                        fruitList[row][col] = fruitList[i][j]
-                        fruitList[i][j] = temp
+                
+                function randomize() {
+                    for (i=0;i<4;i++) {
+                        for (j=0;j<4;j++) {
+                            row = Math.floor(Math.random() * 3);
+                            col = Math.floor(Math.random() * 3);
+                            temp = fruitList[row][col]
+                            fruitList[row][col] = fruitList[i][j]
+                            fruitList[i][j] = temp
+                        }
                     }
                 }
+                randomize()
             
                 
                 for (r=0;r<4;r++) {
@@ -75,10 +79,14 @@
                             $("#Imgr" + previousRow + "c" + previousCol).attr("id", "done")
                         }
                         setTimeout(function(){clicks = 0 }, 2000)
-
+                        $("#reset").click(function() {
+                            randomize()
+                        })
                         
                     }
                 })
+
+                
             </script>
         </body>
     </html>
