@@ -14,79 +14,15 @@
         <body>
             <h1>Epic Matching Game</h1>
             <p id="score"></p>
-            <table id="match">
-            </table>
             <button id="reset">reset</button>
             <button id="showAll">show all</button>
+            <table id="match">
+            </table>
+            <p id="highScore"></p>
 
-            <script>
 
-                fruitList = [["Images/apple.png", "Images/apple.png", "Images/banana.png", "Images/banana.png",],
-                             ["Images/grapefruit.png", "Images/grapefruit.png", "Images/grape.png", "Images/grape.png",],
-                             ["Images/olive.png", "Images/olive.png", "Images/orange.png", "Images/orange.png",],
-                             ["Images/pomegranate.png", "Images/pomegranate.png", "Images/starfruit.png", "Images/starfruit.png",]]
-                
-                function randomize() {
-                    for (i=0;i<4;i++) {
-                        for (j=0;j<4;j++) {
-                            row = Math.floor(Math.random() * 3);
-                            col = Math.floor(Math.random() * 3);
-                            temp = fruitList[row][col]
-                            fruitList[row][col] = fruitList[i][j]
-                            fruitList[i][j] = temp
-                        }
-                    }
-                }
-                randomize()
-            
-                
-                for (r=0;r<4;r++) {
-                    $("#match").append('<tr id=\"r' + r + '\"></tr>')
-                    for (c=0;c<4;c++) {
-                        $("#r" + r).append('<th id=\"r' + r + "c" + c + '\"></tr>')
-                        $("#r" + r + "c" + c).append("<img id=Imgr" + r +"c" + c + " src=\"Images/background.png\">")
-                    }
-                }
-                let score = 0
-                let clicks = 0
-                let previousRow
-                let previousCol
-                $("img").click(function() {
-                    console.log(clicks)
-                    
-                    let row = $(this).attr("id")[4]
-                    let col = $(this).attr("id")[6]
-                    if($(this).attr("id") == "done" || clicks >= 2 || (row == previousRow && col == previousCol)) {
-                        return
-                    }
-
-                    $(this).attr("src", fruitList[row][col])
-                    score++;
-                    $("#score").html("Score: " + score)
-                    if (clicks == 0) {
-                        clicks++
-                        previousRow = row
-                        previousCol = col
-                    } else {
-                        clicks++;
-                        if(fruitList[row][col] != fruitList[previousRow][previousCol]) {
-                            setTimeout(function(){
-                                $("#Imgr" + row + "c" + col).attr("src", "Images/background.png")
-                                $("#Imgr" + previousRow + "c" + previousCol).attr("src", "Images/background.png")
-                            }, 2000) 
-                        } else {
-                            $("#Imgr" + row + "c" + col).attr("id", "done")
-                            $("#Imgr" + previousRow + "c" + previousCol).attr("id", "done")
-                        }
-                        setTimeout(function(){clicks = 0 }, 2000)
-                        $("#reset").click(function() {
-                            randomize()
-                        })
-                        
-                    }
-                })
-
-                
+            <script src="index.js">
+  
             </script>
         </body>
     </html>

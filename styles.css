@@ -7,6 +7,10 @@ table, th, td {
     border: 5px solid;
     align-self: center;
 }
+#match {
+    margin-left: auto;
+    margin-right: auto;
+}
 th {
     background-image: "background.png";
 }
